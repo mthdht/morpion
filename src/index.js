@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            text: null,
+        };
+    }
+
     render() {
         return (
-            <button className="w3-button w3-block">
-                {this.props.text}
+            <button className="w3-button w3-block chooseButton" onClick={() => this.setState({text: 'X'})}>
+                {this.state.text}
             </button>
         );
     }
