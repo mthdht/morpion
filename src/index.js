@@ -5,12 +5,14 @@ import './index.css';
 class Square extends React.Component {
     render() {
         return (
-            <button className="w3-button w3-block chooseButton" onClick={() => this.props.onClick}>
+            <button className="w3-button w3-block chooseButton" onClick={() => this.props.onClick()}>
                 {this.props.text}
             </button>
         );
     }
 }
+
+
 
 class Board extends React.Component {
     constructor(props) {
@@ -18,6 +20,12 @@ class Board extends React.Component {
         this.state = {
             squares: Array(9).fill(null),
         };
+    }
+
+    handleClick(i) {
+        const squares = this.state.squares.slice();
+        squares[i] = 'X';
+        this.setState({squares: squares});
     }
 
     renderSquare(i) {
