@@ -28,7 +28,25 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root" class="w3-content"></div>
+    <div class="main">
+        <nav class="w3-bar w3-blue-gray" id="nav">
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium" onclick="toggle('sidebar')">&#9776;</a>
+            <div class="w3-content">
+                <a href="#" class="w3-bar-item w3-button w3-xlarge w3-hover-none w3-hover-text-light-gray">Tic-Tac-Toe</a>
+            </div>
+        </nav>
+
+        <!-- sidebar -->
+        <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px;z-index: 4;" id="sidebar">
+            <a href="#" class="w3-bar-item w3-button">Link 1</a>
+            <a href="#" class="w3-bar-item w3-button">Link 2</a>
+            <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        </div>
+        <!-- Overlay -->
+        <div class="w3-overlay w3-animate-opacity" onclick="" style="cursor:pointer;margin-top: 51px" id="myOverlay"></div>
+        <div id="root" class=""></div>
+    </div>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +57,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+        function toggle(id) {
+            var el = document.getElementById(id);
+            if (el.className.indexOf("w3-show") == -1) {
+                el.className += " w3-show";
+                document.getElementById("myOverlay").style.display = "block";
+            } else {
+                el.className = el.className.replace(" w3-show", "");
+                document.getElementById('myOverlay').style.display = 'none';
+            }
+        }
+    </script>
   </body>
 </html>
