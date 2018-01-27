@@ -64,25 +64,25 @@ class Board extends React.Component {
 
                 <div className="board-row w3-row w3-bottombar">
                     <div className="w3-third">
-                        {this.renderSquare(4)}
+                        {this.renderSquare(3)}
                     </div>
                     <div className="w3-third w3-leftbar w3-rightbar">
-                        {this.renderSquare(5)}
+                        {this.renderSquare(4)}
                     </div>
                     <div className="w3-third">
-                        {this.renderSquare(6)}
+                        {this.renderSquare(5)}
                     </div>
                 </div>
 
                 <div className="board-row w3-row">
                     <div className="w3-third">
-                        {this.renderSquare(7)}
+                        {this.renderSquare(6)}
                     </div>
                     <div className="w3-third w3-leftbar w3-rightbar">
-                        {this.renderSquare(8)}
+                        {this.renderSquare(7)}
                     </div>
                     <div className="w3-third">
-                        {this.renderSquare(9)}
+                        {this.renderSquare(8)}
                     </div>
                 </div>
             </div>
