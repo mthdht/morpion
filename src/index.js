@@ -2,17 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class Square extends React.Component {
-    render() {
-        return (
-            <button className="w3-button w3-block chooseButton" onClick={() => this.props.onClick()}>
-                {this.props.text}
-            </button>
-        );
-    }
+function Square(props) {
+    return (
+        <button className="w3-button w3-block chooseButton" onClick={props.onClick}>
+            {props.text}
+        </button>
+    );
 }
-
-
 
 class Board extends React.Component {
     constructor(props) {
