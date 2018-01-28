@@ -12,13 +12,23 @@
 .game {
     height: calc(100vh - 52px);
 }
-.game, .game-board, .game-info, .bottombar {
+
+.game-board {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game, .game-board, .game-info {
     width: 100%;
 }
+
 @media screen and (min-width: 600px) {
-    .game, .game-board {
+    .game, .game-board, .bottombar {
         width: 600px;
     }
+
     .game {
         max-width:600px;
     }
