@@ -82,6 +82,7 @@ class Game extends React.Component {
 
     handleClick(i) {
         const squares = this.state.squares.slice();
+        var that =this;
         if (calculateWinner(squares) || squares[i]) {
             return;
         }
@@ -90,6 +91,27 @@ class Game extends React.Component {
             squares: squares,
             xIsNext: !this.state.xIsNext,
         });
+        setTimeout(function () {
+            const winner = calculateWinner(that.state.squares);
+            console.log(winner);
+            if (winner) {
+                if (winner === 'X') {
+                    that.setState((prevState, props) => ({
+                        player1 : {
+                            name: prevState.player1.name,
+                            score: prevState.player1.score + 1,
+                        }
+                    }));
+                } else {
+                    that.setState((prevState, props) => ({
+                        player2 : {
+                            name: prevState.player2.name,
+                            score: prevState.player2.score + 1,
+                        }
+                    }));
+                }
+            }
+        }, 500);
     }
 
     render() {
@@ -106,13 +128,12 @@ class Game extends React.Component {
             <div className="game w3-content">
                 <div className="game-info  w3-container ">
                     <div className="scores w3-section">
-                        <h5 className="w3-light-gray w3-row w3-padding">
-                            <span className="w3-col s3 w3-text-dark-gray">Scores:</span>
+                        <h5 className="w3-light-gray w3-row w3-padding"><span className="w3-col s3 w3-text-dark-gray">Scores:</span>
                             <span className="w3-col s4 w3-center w3-text-blue-gray">
                                 <span className="">player 1</span> <br/> {this.state.player1.score}
                             </span>
                             <span className="w3-col s4 w3-center w3-text-blue-gray">
-                                <span className="">Player 2 </span><br/>{this.state.player1.score}
+                                <span className="">Player 2 </span><br/>{this.state.player2.score}
                             </span>
                         </h5>
 
