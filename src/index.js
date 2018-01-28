@@ -95,7 +95,6 @@ class Game extends React.Component {
     render() {
         const winner = calculateWinner(this.state.squares);
         const squares = this.state.squares;
-        console.log(squares);
         let status;
         if (winner) {
             status = 'Winner: ' + (winner === 'X' ? this.state.player1.name : this.state.player2.name);
@@ -109,8 +108,12 @@ class Game extends React.Component {
                     <div className="scores w3-section">
                         <h5 className="w3-light-gray w3-row w3-padding">
                             <span className="w3-col s3 w3-text-dark-gray">Scores:</span>
-                            <span className="w3-col s4 w3-center"><span className="w3-text-blue-gray">player 1</span> <br/> 9  </span>
-                            <span className="w3-col s4 w3-center"> <span className="w3-text-blue-gray">Player 2 </span><br/> 8 </span>
+                            <span className="w3-col s4 w3-center w3-text-blue-gray">
+                                <span className="">player 1</span> <br/> {this.state.player1.score}
+                            </span>
+                            <span className="w3-col s4 w3-center w3-text-blue-gray">
+                                <span className="">Player 2 </span><br/>{this.state.player1.score}
+                            </span>
                         </h5>
 
                     </div>
