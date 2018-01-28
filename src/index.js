@@ -4,7 +4,7 @@ import './index.css';
 
 function PlayerInfo(props) {
     return (
-    <span className="w3-col s4 w3-center w3-text-blue-gray">
+    <span className="w3-col s4 w3-center w3-text-theme">
         <input type="text"
                name={props.name}
                value={props.player.name}
@@ -19,7 +19,7 @@ function PlayerInfo(props) {
 
 function Square(props) {
     return (
-        <button className="w3-button w3-block chooseButton w3-xxlarge w3-text-blue-gray w3-hover-text-blue-gray" onClick={props.onClick}>
+        <button className="w3-button w3-block chooseButton w3-xxlarge w3-text-theme w3-hover-text-theme" onClick={props.onClick}>
             {props.text}
         </button>
     );
@@ -158,28 +158,28 @@ class Game extends React.Component {
         const squares = this.state.squares;
         let status;
         if (winner) {
-            status = <span><span>Winner: </span> <span className="w3-text-blue-gray w3-xlarge">{winner === 'X' ? this.state.player1.name : this.state.player2.name}</span></span>;
+            status = <span><span>Winner: </span> <span className="w3-text-theme w3-xlarge">{winner === 'X' ? this.state.player1.name : this.state.player2.name}</span></span>;
         } else {
-            status = <span><span>Joueur Suivant:</span> <span className="w3-text-blue-gray w3-xlarge">{this.state.xIsNext ? this.state.player1.name : this.state.player2.name}</span></span>;
+            status = <span><span>Joueur Suivant:</span> <span className="w3-text-theme w3-xlarge">{this.state.xIsNext ? this.state.player1.name : this.state.player2.name}</span></span>;
         }
 
         return (
             <div className="game w3-content ">
                 <div className="game-info ">
                     <div className="scores ">
-                        <div className="w3-light-gray w3-row-padding w3-padding">
+                        <div className="w3-theme-l5 w3-row-padding w3-padding">
                             <span className="w3-col s3 w3-text-dark-gray">Scores:</span>
                             <PlayerInfo player={this.state.player1} name="player1" onChange={this.handleChange}/>
                             <PlayerInfo player={this.state.player2} name="player2" onChange={this.handleChange}/>
                         </div>
                     </div>
-                    <div className='status w3-padding w3-text-blue-gray'>{status}</div>
+                    <div className='status w3-padding w3-text-theme'>{status}</div>
                 </div>
                 <div className="game-board w3-container">
                     <Board squares={squares} onClick={(i) => this.handleClick(i)}/>
                 </div>
-                <div className="bottombar w3-bottom w3-blue-gray w3-center w3-padding">
-                    <div className="w3-button w3-light-gray" onClick={this.handlePlayClick}>Re-jouer</div>
+                <div className="bottombar w3-bottom w3-theme-l1 w3-center w3-padding">
+                    <div className="w3-button w3-theme-l4" onClick={this.handlePlayClick}>Re-jouer</div>
                 </div>
             </div>
         );
