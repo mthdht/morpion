@@ -4,7 +4,7 @@ import './index.css';
 
 function Square(props) {
     return (
-        <button className="w3-button w3-block chooseButton w3-xxlarge w3-text-blue-gray" onClick={props.onClick}>
+        <button className="w3-button w3-block chooseButton w3-xxlarge w3-text-blue-gray w3-hover-text-blue-gray" onClick={props.onClick}>
             {props.text}
         </button>
     );
@@ -68,11 +68,11 @@ class Game extends React.Component {
         super(props);
         this.state = {
             player1: {
-                'name': '',
+                'name': 'mat',
                 'score': 0,
             },
             player2: {
-                'name': '',
+                'name': 'max',
                 'score': 0,
             },
             xIsNext: true,
@@ -100,7 +100,7 @@ class Game extends React.Component {
         if (winner) {
             status = 'Winner: ' + winner;
         } else {
-            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+            status = 'Next player: ' + (this.state.xIsNext ? this.state.player1.name : this.state.player1.name);
         }
 
         return (
