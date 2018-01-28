@@ -152,21 +152,20 @@ class Game extends React.Component {
         if (winner) {
             status = 'Winner: ' + (winner === 'X' ? this.state.player1.name : this.state.player2.name);
         } else {
-            status = 'Next player: ' + (this.state.xIsNext ? this.state.player1.name : this.state.player2.name);
+            status = <span><span>Joueur Suivant:</span> <span className="w3-text-blue-gray w3-xlarge">{this.state.xIsNext ? this.state.player1.name : this.state.player2.name}</span></span>;
         }
 
         return (
             <div className="game w3-content">
-                <div className="game-info  w3-container ">
-                    <div className="scores w3-section">
-                        <h5 className="w3-light-gray w3-row-padding w3-padding">
+                <div className="game-info">
+                    <div className="scores ">
+                        <div className="w3-light-gray w3-row-padding w3-padding">
                             <span className="w3-col s3 w3-text-dark-gray">Scores:</span>
                             <PlayerInfo player={this.state.player1} name="player1" onChange={this.handleChange}/>
                             <PlayerInfo player={this.state.player2} name="player2" onChange={this.handleChange}/>
-                        </h5>
+                        </div>
                     </div>
                     <div className='status w3-padding w3-text-blue-gray'>{status}</div>
-                    <ol>{/* TODO */}</ol>
                 </div>
                 <div className="game-board w3-container w3-margin-bottom">
                     <Board squares={squares} onClick={(i) => this.handleClick(i)}/>
