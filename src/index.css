@@ -2,7 +2,23 @@
     height: 80px;
 }
 
+.codewars {
+    background-image: url("https://www.codewars.com/users/mthdht/badges/large");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:200px;
+    height: 25px;
+}
+.game {
+    height: calc(100vh - 52px);
+}
+.game, .game-board, .game-info, .bottombar {
+    width: 100%;
+}
 @media screen and (min-width: 600px) {
+    .game, .game-board {
+        width: 600px;
+    }
     .game {
         max-width:600px;
     }

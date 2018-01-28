@@ -150,14 +150,14 @@ class Game extends React.Component {
         const squares = this.state.squares;
         let status;
         if (winner) {
-            status = 'Winner: ' + (winner === 'X' ? this.state.player1.name : this.state.player2.name);
+            status = <span><span>Winner: </span> <span className="w3-text-blue-gray w3-xlarge">{winner === 'X' ? this.state.player1.name : this.state.player2.name}</span></span>;
         } else {
             status = <span><span>Joueur Suivant:</span> <span className="w3-text-blue-gray w3-xlarge">{this.state.xIsNext ? this.state.player1.name : this.state.player2.name}</span></span>;
         }
 
         return (
-            <div className="game w3-content">
-                <div className="game-info">
+            <div className="game w3-content w3-display-container">
+                <div className="game-info w3-display-topmiddle">
                     <div className="scores ">
                         <div className="w3-light-gray w3-row-padding w3-padding">
                             <span className="w3-col s3 w3-text-dark-gray">Scores:</span>
@@ -167,10 +167,10 @@ class Game extends React.Component {
                     </div>
                     <div className='status w3-padding w3-text-blue-gray'>{status}</div>
                 </div>
-                <div className="game-board w3-container w3-margin-bottom">
+                <div className="game-board w3-container w3-margin-bottom w3-display-middle">
                     <Board squares={squares} onClick={(i) => this.handleClick(i)}/>
                 </div>
-                <div className="bottombar w3-bottom w3-bar w3-blue-gray w3-hide-medium w3-hide-large">
+                <div className="bottombar w3-bottom w3-bar w3-blue-gray w3-hide-medium w3-hide-large w3-display-bottommiddle">
                     <div className="w3-bar-item w3-button">Rejouer</div>
                     <div className="w3-bar-item w3-button">link</div>
                     <div className="w3-bar-item w3-button">link</div>
