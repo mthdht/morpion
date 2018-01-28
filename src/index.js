@@ -104,15 +104,28 @@ class Game extends React.Component {
         }
 
         return (
-            <div className="game w3-container w3-content">
-                <div className="game-info">
-                    <div>{status}</div>
+            <div className="game w3-content">
+                <div className="game-info  w3-container ">
+                    <div className="scores w3-section">
+                        <h5 className="w3-light-gray w3-row w3-padding">
+                            <span className="w3-col s3 w3-text-dark-gray">Scores:</span>
+                            <span className="w3-col s4 w3-center"><span className="w3-text-blue-gray">player 1</span> <br/> 9  </span>
+                            <span className="w3-col s4 w3-center"> <span className="w3-text-blue-gray">Player 2 </span><br/> 8 </span>
+                        </h5>
+
+                    </div>
+                    <div className='status w3-padding w3-text-blue-gray'>{status}</div>
                     <ol>{/* TODO */}</ol>
                 </div>
-                <div className="game-board w3-section">
+                <div className="game-board w3-section w3-container ">
                     <Board squares={squares} onClick={(i) => this.handleClick(i)}/>
                 </div>
-
+                <div className="bottombar w3-bottom w3-bar w3-blue-gray w3-hide-medium w3-hide-large">
+                    <div className="w3-bar-item w3-button">Rejouer</div>
+                    <div className="w3-bar-item w3-button">link</div>
+                    <div className="w3-bar-item w3-button">link</div>
+                    <div className="w3-bar-item w3-button">link</div>
+                </div>
             </div>
         );
     }
