@@ -76,8 +76,6 @@ class Board extends React.Component {
     }
 }
 
-
-
 class Game extends React.Component {
     constructor(props) {
         super(props);
@@ -128,7 +126,7 @@ class Game extends React.Component {
                     }));
                 }
             }
-        }, 500);
+        }, 200);
     }
 
     handleChange(event) {
@@ -183,8 +181,6 @@ class Game extends React.Component {
         );
     }
 }
-
-
 
 ReactDOM.render(
     <Game />,
