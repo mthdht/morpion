@@ -167,14 +167,11 @@ class Game extends React.Component {
                     </div>
                     <div className='status w3-padding w3-text-blue-gray'>{status}</div>
                 </div>
-                <div className="game-board w3-container w3-margin-bottom ">
+                <div className="game-board w3-container">
                     <Board squares={squares} onClick={(i) => this.handleClick(i)}/>
                 </div>
-                <div className="bottombar w3-bottom w3-bar w3-blue-gray">
-                    <div className="w3-bar-item w3-button">Rejouer</div>
-                    <div className="w3-bar-item w3-button">link</div>
-                    <div className="w3-bar-item w3-button">link</div>
-                    <div className="w3-bar-item w3-button">link</div>
+                <div className="bottombar w3-bottom w3-blue-gray w3-center w3-padding">
+                    <div className="w3-button w3-light-gray">Re-jouer</div>
                 </div>
             </div>
         );
