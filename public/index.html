@@ -10,6 +10,7 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -30,17 +31,26 @@
     </noscript>
     <div class="main">
         <nav class="w3-bar w3-blue-gray" id="nav">
-            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium" onclick="toggle('sidebar')">&#9776;</a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large" onclick="toggle('sidebar')">&#9776;</a>
             <div class="w3-content">
                 <a href="#" class="w3-bar-item w3-button w3-xlarge w3-hover-none w3-hover-text-light-gray">Tic-Tac-Toe</a>
             </div>
         </nav>
 
         <!-- sidebar -->
-        <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px;z-index: 4;" id="sidebar">
-            <a href="#" class="w3-bar-item w3-button">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button">Link 2</a>
-            <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left w3-container w3-display-container" style="width:250px;z-index: 4;" id="sidebar">
+            <header class="w3-text-blue-gray">
+                <h5>Bienvenue au jeu du morpion !</h5>
+            </header>
+            <a href="https://fr.wikipedia.org/wiki/Morpion_(jeu)" class="w3-bar-item w3-button w3-text-gray">Régles du jeu</a>
+            <a href="https://github.com/mthdht/morpion" class="w3-bar-item w3-button w3-text-gray">Contribuer</a>
+            <div href="#" class="w3-text-gray w3-display-middle w3-center w3-large">
+                Me suivre <br>
+                <a href="https://twitter.com/mthdht" target="_blank"><i class="fa fa-twitter fa-2x w3-hover-text-blue-gray"></i></a>
+                <a href="https://github.com/mthdht/" target="_blank"><i class="fa fa-github fa-2x w3-hover-text-blue-gray"></i></a>
+                <br class="">
+                <a href="https://www.codewars.com/users/mthdht" target="_blank" class="codewars w3-margin w3-hover-blue-gray" style="display:block"></a>
+            </div>
         </div>
         <!-- Overlay -->
         <div class="w3-overlay w3-animate-opacity" onclick="" style="cursor:pointer;margin-top: 51px" id="myOverlay"></div>
