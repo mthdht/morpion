@@ -78,6 +78,8 @@ class Game extends React.Component {
             xIsNext: true,
             squares: Array(9).fill(null),
         };
+        this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleClick(i) {
@@ -114,6 +116,22 @@ class Game extends React.Component {
         }, 500);
     }
 
+    handleChange(event) {
+        event.target.name === 'player1' ?
+            this.setState({
+                player1: {
+                    'name': event.target.value,
+                    'score': this.state.player1.score
+                }
+            }) :
+            this.setState({
+                player2: {
+                    'name': event.target.value,
+                    'score': this.state.player2.score
+                }
+            });
+    }
+
     render() {
         const winner = calculateWinner(this.state.squares);
         const squares = this.state.squares;
@@ -128,12 +146,26 @@ class Game extends React.Component {
             <div className="game w3-content">
                 <div className="game-info  w3-container ">
                     <div className="scores w3-section">
-                        <h5 className="w3-light-gray w3-row w3-padding"><span className="w3-col s3 w3-text-dark-gray">Scores:</span>
+                        <h5 className="w3-light-gray w3-row-padding w3-padding"><span className="w3-col s3 w3-text-dark-gray">Scores:</span>
                             <span className="w3-col s4 w3-center w3-text-blue-gray">
-                                <span className="">player 1</span> <br/> {this.state.player1.score}
+                                <input type="text"
+                                       name="player1"
+                                       value={this.state.player1.name}
+                                       className="w3-input w3-border w3-tiny"
+                                       placeholder="Player 1"
+                                       onChange={this.handleChange}
+                                />
+                                {this.state.player1.score}
                             </span>
                             <span className="w3-col s4 w3-center w3-text-blue-gray">
-                                <span className="">Player 2 </span><br/>{this.state.player2.score}
+                                <input type="text"
+                                       name="player2"
+                                       value={this.state.player2.name}
+                                       className="w3-input w3-border w3-tiny"
+                                       placeholder="Player 1"
+                                       onChange={this.handleChange}
+                                />
+                                {this.state.player2.score}
                             </span>
                         </h5>
 
