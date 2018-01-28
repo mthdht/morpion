@@ -122,7 +122,7 @@ class Game extends React.Component {
                         player1 : {
                             name: prevState.player1.name,
                             score: prevState.player1.score + 1,
-                        }
+                        },
                     }));
                 } else {
                     that.setState((prevState, props) => ({
@@ -130,7 +130,6 @@ class Game extends React.Component {
                             name: prevState.player2.name,
                             score: prevState.player2.score + 1,
                         },
-                        xIsNext: !this.state.xIsNext,
                     }));
                 }
             }
