@@ -98,9 +98,9 @@ class Game extends React.Component {
         console.log(squares);
         let status;
         if (winner) {
-            status = 'Winner: ' + winner;
+            status = 'Winner: ' + (winner === 'X' ? this.state.player1.name : this.state.player2.name);
         } else {
-            status = 'Next player: ' + (this.state.xIsNext ? this.state.player1.name : this.state.player1.name);
+            status = 'Next player: ' + (this.state.xIsNext ? this.state.player1.name : this.state.player2.name);
         }
 
         return (
