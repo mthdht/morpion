@@ -4,7 +4,7 @@ import './index.css';
 
 function Square(props) {
     return (
-        <button className="w3-button w3-block chooseButton" onClick={props.onClick}>
+        <button className="w3-button w3-block chooseButton w3-xxlarge w3-text-blue-gray" onClick={props.onClick}>
             {props.text}
         </button>
     );
@@ -117,7 +117,7 @@ class Game extends React.Component {
                     <div className='status w3-padding w3-text-blue-gray'>{status}</div>
                     <ol>{/* TODO */}</ol>
                 </div>
-                <div className="game-board w3-section w3-container ">
+                <div className="game-board w3-container w3-margin-bottom">
                     <Board squares={squares} onClick={(i) => this.handleClick(i)}/>
                 </div>
                 <div className="bottombar w3-bottom w3-bar w3-blue-gray w3-hide-medium w3-hide-large">

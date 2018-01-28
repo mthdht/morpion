@@ -2,7 +2,6 @@
     height: 80px;
 }
 
-
 @media screen and (min-width: 600px) {
     .game {
         max-width:600px;
