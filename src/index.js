@@ -2,6 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+function PlayerInfo(props) {
+    return (
+    <span className="w3-col s4 w3-center w3-text-blue-gray">
+        <input type="text"
+               name={props.name}
+               value={props.player.name}
+               className="w3-input w3-border w3-small"
+               placeholder="Player 1"
+               onChange={props.onChange}
+        />
+        {props.player.score}
+    </span>
+    );
+}
+
 function Square(props) {
     return (
         <button className="w3-button w3-block chooseButton w3-xxlarge w3-text-blue-gray w3-hover-text-blue-gray" onClick={props.onClick}>
@@ -146,29 +161,11 @@ class Game extends React.Component {
             <div className="game w3-content">
                 <div className="game-info  w3-container ">
                     <div className="scores w3-section">
-                        <h5 className="w3-light-gray w3-row-padding w3-padding"><span className="w3-col s3 w3-text-dark-gray">Scores:</span>
-                            <span className="w3-col s4 w3-center w3-text-blue-gray">
-                                <input type="text"
-                                       name="player1"
-                                       value={this.state.player1.name}
-                                       className="w3-input w3-border w3-tiny"
-                                       placeholder="Player 1"
-                                       onChange={this.handleChange}
-                                />
-                                {this.state.player1.score}
-                            </span>
-                            <span className="w3-col s4 w3-center w3-text-blue-gray">
-                                <input type="text"
-                                       name="player2"
-                                       value={this.state.player2.name}
-                                       className="w3-input w3-border w3-tiny"
-                                       placeholder="Player 1"
-                                       onChange={this.handleChange}
-                                />
-                                {this.state.player2.score}
-                            </span>
+                        <h5 className="w3-light-gray w3-row-padding w3-padding">
+                            <span className="w3-col s3 w3-text-dark-gray">Scores:</span>
+                            <PlayerInfo player={this.state.player1} name="player1" onChange={this.handleChange}/>
+                            <PlayerInfo player={this.state.player2} name="player2" onChange={this.handleChange}/>
                         </h5>
-
                     </div>
                     <div className='status w3-padding w3-text-blue-gray'>{status}</div>
                     <ol>{/* TODO */}</ol>
