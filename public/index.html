@@ -10,6 +10,7 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -20,12 +21,43 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+    <!-- w3.css library -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <div class="main">
+        <nav class="w3-bar w3-theme" id="nav">
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large" onclick="toggle('sidebar')">&#9776;</a>
+            <div class="w3-content">
+                <a href="#" class="w3-bar-item w3-button w3-xlarge w3-hover-text-theme">Tic-Tac-Toe</a>
+            </div>
+        </nav>
+
+        <!-- sidebar -->
+        <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left w3-container w3-display-container" style="width:250px;z-index: 4;" id="sidebar">
+            <header class="w3-text-theme">
+                <h5>Bienvenue au jeu du morpion !</h5>
+            </header>
+            <a href="https://fr.wikipedia.org/wiki/Morpion_(jeu)" class="w3-bar-item w3-button w3-text-gray w3-hover-theme">Régles du jeu</a>
+            <a href="https://github.com/mthdht/morpion" class="w3-bar-item w3-button w3-text-gray w3-hover-theme">Contribuer</a>
+            <div href="#" class="w3-text-gray w3-display-middle w3-center w3-large">
+                Me suivre <br>
+                <a href="https://twitter.com/mthdht" target="_blank"><i class="fa fa-twitter fa-2x w3-hover-text-theme"></i></a>
+                <a href="https://github.com/mthdht/" target="_blank"><i class="fa fa-github fa-2x w3-hover-text-theme"></i></a>
+                <br class="">
+                <a href="https://www.codewars.com/users/mthdht" target="_blank" class="codewars w3-margin w3-hover-theme" style="display:block"></a>
+            </div>
+        </div>
+        <!-- Overlay -->
+        <div class="w3-overlay w3-animate-opacity" onclick="" style="cursor:pointer;margin-top: 51px" id="myOverlay"></div>
+        <div id="root" class="w3-main" style="margin-left: 250px"></div>
+    </div>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -36,5 +68,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+        function toggle(id) {
+            var el = document.getElementById(id);
+            if (el.className.indexOf("w3-show") == -1) {
+                el.className += " w3-show";
+                document.getElementById("myOverlay").style.display = "block";
+            } else {
+                el.className = el.className.replace(" w3-show", "");
+                document.getElementById('myOverlay').style.display = 'none';
+            }
+        }
+    </script>
   </body>
 </html>
