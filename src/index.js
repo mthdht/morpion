@@ -93,6 +93,13 @@ class Game extends React.Component {
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handlePlayClick = this.handlePlayClick.bind(this);
+    }
+
+    handlePlayClick(event) {
+        this.setState({
+            squares: Array(9).fill(null),
+        })
     }
 
     handleClick(i) {
@@ -122,7 +129,8 @@ class Game extends React.Component {
                         player2 : {
                             name: prevState.player2.name,
                             score: prevState.player2.score + 1,
-                        }
+                        },
+                        xIsNext: !this.state.xIsNext,
                     }));
                 }
             }
@@ -171,7 +179,7 @@ class Game extends React.Component {
                     <Board squares={squares} onClick={(i) => this.handleClick(i)}/>
                 </div>
                 <div className="bottombar w3-bottom w3-blue-gray w3-center w3-padding">
-                    <div className="w3-button w3-light-gray">Re-jouer</div>
+                    <div className="w3-button w3-light-gray" onClick={this.handlePlayClick}>Re-jouer</div>
                 </div>
             </div>
         );
