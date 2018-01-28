@@ -1,3 +1,14 @@
 .board-row, .w3-third, .chooseButton {
     height: 80px;
 }
+
+
+@media screen and (min-width: 600px) {
+    .game {
+        max-width:600px;
+    }
+
+    .board-row, .w3-third, .chooseButton {
+        height: 120px;
+    }
+}

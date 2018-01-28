@@ -22,37 +22,37 @@ class Board extends React.Component {
         return (
             <div className="w3-center">
                 <div className="board-row w3-row w3-bottombar">
-                    <div className="w3-third">
+                    <div className="w3-col s4">
                         {this.renderSquare(0)}
                     </div>
-                    <div className="w3-third w3-leftbar w3-rightbar">
+                    <div className="w3-col s4 w3-leftbar w3-rightbar">
                         {this.renderSquare(1)}
                     </div>
-                    <div className="w3-third">
+                    <div className="w3-col s4">
                         {this.renderSquare(2)}
                     </div>
                 </div>
 
                 <div className="board-row w3-row w3-bottombar">
-                    <div className="w3-third">
+                    <div className="w3-col s4">
                         {this.renderSquare(3)}
                     </div>
-                    <div className="w3-third w3-leftbar w3-rightbar">
+                    <div className="w3-col s4 w3-leftbar w3-rightbar">
                         {this.renderSquare(4)}
                     </div>
-                    <div className="w3-third">
+                    <div className="w3-col s4">
                         {this.renderSquare(5)}
                     </div>
                 </div>
 
                 <div className="board-row w3-row">
-                    <div className="w3-third">
+                    <div className="w3-col s4">
                         {this.renderSquare(6)}
                     </div>
-                    <div className="w3-third w3-leftbar w3-rightbar">
+                    <div className="w3-col s4 w3-leftbar w3-rightbar">
                         {this.renderSquare(7)}
                     </div>
-                    <div className="w3-third">
+                    <div className="w3-col s4">
                         {this.renderSquare(8)}
                     </div>
                 </div>
@@ -104,14 +104,15 @@ class Game extends React.Component {
         }
 
         return (
-            <div className="game">
-                <div className="game-board">
-                    <Board squares={squares} onClick={(i) => this.handleClick(i)}/>
-                </div>
+            <div className="game w3-container w3-content">
                 <div className="game-info">
                     <div>{status}</div>
                     <ol>{/* TODO */}</ol>
                 </div>
+                <div className="game-board w3-section">
+                    <Board squares={squares} onClick={(i) => this.handleClick(i)}/>
+                </div>
+
             </div>
         );
     }
