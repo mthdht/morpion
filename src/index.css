@@ -24,6 +24,16 @@
     width: 100%;
 }
 
+.colors {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.color {
+    width:15px;
+    height: 15px;
+}
+
 @media screen and (min-width: 600px) {
     .game, .game-board, .bottombar {
         width: 600px;
