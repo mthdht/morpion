@@ -35,22 +35,22 @@
             <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large" onclick="toggle('sidebar')">&#9776;</a>
             <div class="w3-content">
                 <a href="#" class="w3-bar-item w3-button w3-xlarge w3-hover-text-theme">Tic-Tac-Toe</a>
-                <div class="w3-right w3-padding">
-                    <div class="w3-dropdown-hover">
+                <div class="w3-right w3-padding w3-margin-right">
+                    <div class="w3-dropdown-hover dropdown">
                         <div class="colors w3-theme">
-                            <div class="w3-red color"></div><div class="w3-amber color"></div><div class="w3-green color"></div><div class="w3-purple color"></div>
+                            <div class="w3-deep-orange color"></div><div class="w3-light-green color"></div><div class="w3-yellow color"></div><div class="w3-cyan color"></div>
                         </div>
-                        <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-container" style="right: 0">
+                        <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-container themes">
                             <h5>Changer de theme</h5>
-                            <button class="w3-bar-item w3-button w3-red">Rouge</button>
-                            <button class="w3-bar-item w3-button w3-pink">Rose</button>
-                            <button class="w3-bar-item w3-button w3-purple">Violet</button>
-                            <button class="w3-bar-item w3-button w3-blue-gray">Bleu (foncé)</button>
-                            <button class="w3-bar-item w3-button w3-blue">Bleu (clair)</button>
-                            <button class="w3-bar-item w3-button w3-green">Vert</button>
-                            <button class="w3-bar-item w3-button w3-amber">Jaune</button>
-                            <button class="w3-bar-item w3-button w3-orange">orange</button>
-                            <button class="w3-bar-item w3-button w3-gray w3-margin-bottom">Gris</button>
+                            <button class="w3-bar-item w3-button w3-red red" onclick="changeTheme(this)">Rouge</button>
+                            <button class="w3-bar-item w3-button w3-pink pink" onclick="changeTheme(this)">Rose</button>
+                            <button class="w3-bar-item w3-button w3-purple purple" onclick="changeTheme(this)">Violet</button>
+                            <button class="w3-bar-item w3-button w3-blue-gray blue-grey" onclick="changeTheme(this)">Bleu (foncé)</button>
+                            <button class="w3-bar-item w3-button w3-blue blue" onclick="changeTheme(this)">Bleu (clair)</button>
+                            <button class="w3-bar-item w3-button w3-green green" onclick="changeTheme(this)">Vert</button>
+                            <button class="w3-bar-item w3-button w3-amber amber" onclick="changeTheme(this)">Jaune</button>
+                            <button class="w3-bar-item w3-button w3-orange orange" onclick="changeTheme(this)">orange</button>
+                            <button class="w3-bar-item w3-button w3-margin-bottom w3-gray grey" onclick="changeTheme(this)">Gris</button>
                         </div>
                     </div>
                 </div>
@@ -97,6 +97,11 @@
                 el.className = el.className.replace(" w3-show", "");
                 document.getElementById('myOverlay').style.display = 'none';
             }
+        }
+
+        function changeTheme(el) {
+            console.log(document.getElementsByTagName('link')[4], el.className.split(' ').slice(-1)[0]);
+            document.getElementsByTagName('link')[4].href = "https://www.w3schools.com/lib/w3-theme-" + el.className.split(' ').slice(-1)[0] +".css";
         }
     </script>
   </body>
